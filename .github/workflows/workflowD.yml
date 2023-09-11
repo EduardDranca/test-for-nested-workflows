@@ -1,0 +1,17 @@
+name: Workflow D
+
+on:
+    workflow_call:
+        inputs:
+            A:
+                type: string
+            B:
+                type: string
+
+jobs:
+    cd:
+        name: cd
+        runs-on: [ubuntu-latest]
+        steps:
+            - name: plm
+              run: echo "${{ inputs.A }} ${{ inputs.B }}"

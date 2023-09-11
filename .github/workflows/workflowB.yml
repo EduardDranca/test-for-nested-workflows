@@ -1,0 +1,24 @@
+name: Workflow B
+
+on:
+    workflow_call:
+        inputs:
+            listA:
+                type: string
+            listB:
+                type: string
+
+jobs:
+    cd:
+        name: cd
+        runs-on: [ubuntu-latest]
+
+        strategy:
+            fail-fast: false
+            matrix:
+                A: ${{ fromJson(inputs.listA) }}
+
+        uses: 'EduardDranca/test-for-nested-workflows/.github/workflows/workflowC.yml@main'
+        with:
+            A: ${{ matrix.A }}
+            listB: ${{ inputs.listB }}
