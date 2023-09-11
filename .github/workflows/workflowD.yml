@@ -11,7 +11,7 @@ on:
 jobs:
   cd:
     name: cd
-    runs-on: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: plm
         run: echo "${{ inputs.A }} ${{ inputs.B }}"

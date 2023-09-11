@@ -13,9 +13,8 @@ on:
 jobs:
   cd:
     name: cd
-    runs-on: [ubuntu-latest]
-
-    uses: "EduardDranca/test-for-nested-workflows/.github/workflows/workflowB.yml@main"
+    
+    uses: EduardDranca/test-for-nested-workflows/.github/workflows/workflowB.yml@main
     with:
       listA: ${{ inputs.listA }}
       listB: ${{ inputs.listB }}
