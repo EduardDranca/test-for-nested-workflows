@@ -12,9 +12,8 @@ jobs:
     cd:
         name: cd
         runs-on: [ubuntu-latest]
-        steps:
-            - name: workflow B
-              uses: 'EduardDranca/test-for-nested-workflows/.github/workflows/workflowB.yml@main'
-              with:
-                listA: ${{ inputs.listA }}
-                listB: ${{ inputs.listB }}
+            
+        uses: 'EduardDranca/test-for-nested-workflows/.github/workflows/workflowB.yml@main'
+        with:
+            listA: ${{ inputs.listA }}
+            listB: ${{ inputs.listB }}
